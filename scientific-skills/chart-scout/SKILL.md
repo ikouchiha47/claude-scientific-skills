@@ -3,7 +3,7 @@ name: chart-scout
 description: Automate stock chart screenshot capture from financial websites (Screener.in, Chartink, Google Finance, TradingView) using Playwright. Captures clean chart images with popup/modal removal, timeframe switching, and element-level screenshots. Pairs with alpha-vantage (data) and technical-analyst (LLM visual analysis) for a full pipeline from symbol to analysis report.
 license: MIT
 metadata:
-    skill-author: K-Dense Inc.
+    skill-author: Iko Uchiha
 ---
 
 # Chart Scout — Automated Stock Chart Screenshots
