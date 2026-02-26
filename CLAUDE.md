@@ -48,12 +48,27 @@ uv run ruff check .
 
 Use language-specific sandboxing (nix, npm/npx, cargo, etc.) — do not install globally.
 
+## Script Locations
+
+| Location | Purpose | Example |
+|----------|---------|---------|
+| `scientific-skills/<skill>/scripts/` | Reusable scripts bundled with a skill | `chart-scout/scripts/chart_scout.py` |
+| `memory/scripts/` | Memory store CLI | `memory/scripts/memory_store.py` |
+| `scripts/` | Reusable project-level tools (linking, generic feature engineering) | `scripts/link_skills.sh`, `scripts/feature_engineer.py` |
+| `output/<analysis_name>/` | Ad-hoc analysis scripts + their outputs (data, charts, reports) | `output/mining_analysis/` |
+
+**When creating scripts during analysis:**
+- Put ad-hoc/one-off analysis scripts in `output/<analysis_name>/` alongside their output (CSV, PNG, reports)
+- Only promote a script to `scripts/` if it's reusable across multiple analyses
+- Never dump throwaway analysis scripts into root `scripts/` — it becomes a mess fast
+- Name scripts descriptively: `output/mining_analysis/feature_extraction.py`, not `scripts/mining_v2.py`
+
 ## Skills Structure
 
 Each skill lives under `scientific-skills/<skill-name>/` with:
 - `SKILL.md` — main documentation (frontmatter + usage)
 - `references/` — detailed reference docs
-- `scripts/` — executable Python scripts
+- `scripts/` — executable Python scripts (reusable, part of the skill)
 - `assets/` — config files (YAML, JSON)
 
 ## Memory (Persistent Knowledge Store)

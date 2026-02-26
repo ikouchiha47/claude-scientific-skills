@@ -27,6 +27,7 @@ uv pip install pykalman hmmlearn arch pyportfolioopt empyrical statsmodels yfina
 | Factor Models | statsmodels + numpy | Risk attribution, Fama-French |
 | Portfolio Optimization | pyportfolioopt | Efficient frontier, risk parity |
 | Risk Metrics | empyrical | VaR, Sharpe, drawdown |
+| Feature Engineering | scikit-learn | Predictive feature extraction, walk-forward validation, ablation |
 
 ## Quick Examples
 
@@ -65,5 +66,16 @@ res = model.fit(disp="off")
 forecast = res.forecast(horizon=5)
 print(forecast.variance[-1:])
 ```
+
+### Build predictive features for a sector
+```bash
+# Built-in sectors: mining, auto, it, banking
+uv run python scripts/feature_engineer.py --sector mining
+
+# Custom config
+uv run python scripts/feature_engineer.py --config my_sector.json --output output/my_features
+```
+
+Outputs: tiered feature spec (JSON), feature matrices (CSV), ablation study, walk-forward validation results. See `references/feature-engineering.md` for the full framework and sector-specific feature selection guide.
 
 See `references/` for detailed docs and worked examples for each model.
