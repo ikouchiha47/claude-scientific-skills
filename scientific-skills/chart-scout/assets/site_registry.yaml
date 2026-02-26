@@ -1,0 +1,91 @@
+sites:
+  screener_in:
+    name: Screener.in
+    base_url: "https://www.screener.in/company/{symbol}/consolidated/"
+    region: india
+    exchanges: [NSE, BSE]
+    login_required: false
+    timeframe_buttons:
+      1Y: "button:has-text('1Y'), a:has-text('1Y')"
+      5Y: "button:has-text('5Y'), a:has-text('5Y')"
+      Max: "button:has-text('Max'), a:has-text('Max')"
+    wait_for: "canvas"
+    wait_timeout_ms: 15000
+    settle_ms: 3000
+    popup_strategy: generic
+    viewport:
+      width: 1280
+      height: 900
+    notes: "Primary source for Indian equities. No login needed."
+
+  chartink:
+    name: Chartink
+    base_url: "https://chartink.com/stocks/{symbol}.html"
+    region: india
+    exchanges: [NSE, BSE]
+    login_required: false
+    timeframe_buttons:
+      1Y: "button:has-text('1Y')"
+      5Y: "button:has-text('5Y')"
+      Max: "button:has-text('All')"
+    wait_for: "canvas"
+    wait_timeout_ms: 15000
+    settle_ms: 3000
+    popup_strategy: generic
+    viewport:
+      width: 1280
+      height: 900
+    notes: "Indian screener with technical charts."
+
+  google_finance:
+    name: Google Finance
+    base_url: "https://www.google.com/finance/quote/{symbol}:{exchange}"
+    region: global
+    exchanges: [NASDAQ, NYSE, NSE, BSE, LON, TYO]
+    login_required: false
+    timeframe_buttons:
+      1Y: "button:has-text('1Y'), div[data-period='1Y']"
+      5Y: "button:has-text('5Y'), div[data-period='5Y']"
+      Max: "button:has-text('Max'), div[data-period='Max']"
+    wait_for: "svg"
+    wait_timeout_ms: 10000
+    settle_ms: 3000
+    popup_strategy: google_consent
+    viewport:
+      width: 1280
+      height: 900
+    notes: "Best for quick global lookups. No login."
+
+  tradingview:
+    name: TradingView
+    base_url: "https://www.tradingview.com/chart/?symbol={exchange}:{symbol}"
+    region: global
+    exchanges: [NASDAQ, NYSE, NSE, BSE, LON, TYO, AMEX]
+    login_required: false
+    timeframe_buttons:
+      1D: "#header-toolbar-intervals button:has-text('1D')"
+      1W: "#header-toolbar-intervals button:has-text('1W')"
+      1M: "#header-toolbar-intervals button:has-text('1M')"
+    wait_for: "canvas"
+    wait_timeout_ms: 20000
+    settle_ms: 5000
+    popup_strategy: tradingview
+    viewport:
+      width: 1920
+      height: 1080
+    notes: "Best chart quality. May show login prompts after a few visits."
+
+# Fallback order by region
+fallback_chains:
+  india: [screener_in, chartink, google_finance, tradingview]
+  global: [google_finance, tradingview]
+
+# Exchange-to-region mapping
+exchange_region:
+  NSE: india
+  BSE: india
+  NASDAQ: global
+  NYSE: global
+  AMEX: global
+  LON: global
+  TYO: global
