@@ -116,6 +116,33 @@ If memory has relevant findings, build on them. Don't start from zero.
 
 Run the analysis, then store every useful finding in memory.
 
+### Step 5: Chart Analysis
+
+Always capture and analyze stock charts as part of any equity research:
+
+```bash
+# Capture chart screenshot (auto-selects screener.in for NSE/BSE)
+uv run python .claude/skills/chart-scout/scripts/chart_scout.py \
+  --symbol RELIANCE --exchange NSE --timeframe 1Y \
+  --output output/<analysis-dir>/charts/RELIANCE.png
+```
+
+Read the screenshot with the Read tool and provide visual technical analysis:
+- Price pattern (uptrend, range-bound, breakdown, parabolic)
+- Volume confirmation
+- Support/resistance levels
+- Moving average positioning
+
+### Step 6: Save Report
+
+Always save a markdown report to `output/<analysis-name>/REPORT.md` containing:
+- Data summaries (tables)
+- Correlation findings
+- Chart analysis (visual observations)
+- Recommendations with rationale
+
+This ensures results are reproducible and reviewable across sessions.
+
 ### More Examples
 
 **"Suggest a basket of stocks for long-term investment"**

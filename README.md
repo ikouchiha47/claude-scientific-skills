@@ -1,11 +1,11 @@
 # Claude Scientific Skills
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE.md)
-[![Skills](https://img.shields.io/badge/Skills-156-brightgreen.svg)](#whats-included)
+[![Skills](https://img.shields.io/badge/Skills-158-brightgreen.svg)](#whats-included)
 [![Agent Skills](https://img.shields.io/badge/Standard-Agent_Skills-blueviolet.svg)](https://agentskills.io/)
 [![Works with](https://img.shields.io/badge/Works_with-Cursor_|_Claude_Code_|_Codex-blue.svg)](#getting-started)
 
-A comprehensive collection of **156+ ready-to-use scientific and research skills** (now including financial/SEC research, U.S. Treasury fiscal data, OFR Hedge Fund Monitor, Alpha Vantage market data, Chart Scout automated chart capture, yfinance, backtesting, quant models, and geo-intelligence) for any AI agent that supports the open [Agent Skills](https://agentskills.io/) standard, created by [K-Dense](https://k-dense.ai). Works with **Cursor, Claude Code, Codex, and more**. Transform your AI agent into a research assistant capable of executing complex multi-step scientific workflows across biology, chemistry, medicine, and beyond.
+A comprehensive collection of **158+ ready-to-use scientific and research skills** (now including financial/SEC research, U.S. Treasury fiscal data, OFR Hedge Fund Monitor, Alpha Vantage market data, Chart Scout automated chart capture, yfinance, backtesting, quant models, and geo-intelligence) for any AI agent that supports the open [Agent Skills](https://agentskills.io/) standard, created by [K-Dense](https://k-dense.ai). Works with **Cursor, Claude Code, Codex, and more**. Transform your AI agent into a research assistant capable of executing complex multi-step scientific workflows across biology, chemistry, medicine, and beyond.
 
 **Looking for the full AI co-scientist experience?** Try [K-Dense Web](https://k-dense.ai) for 200+ skills, cloud compute, and publication-ready outputs.
 
