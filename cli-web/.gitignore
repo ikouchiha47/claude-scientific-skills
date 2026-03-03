@@ -1,0 +1,5 @@
+opencode.creds.json
+.env
+sessions/
+cli-web
+chroma_data/

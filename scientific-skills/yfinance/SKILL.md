@@ -25,8 +25,13 @@ import yfinance as yf
 df = yf.download("RELIANCE.NS", period="1y")
 print(df.tail())
 
-# Multiple stocks at once
+# Multiple stocks — returns MultiIndex DataFrame
 df = yf.download(["RELIANCE.NS", "TCS.NS", "INFY.NS"], period="5y")
+closes = df["Close"]           # DataFrame with tickers as columns
+returns = closes.pct_change()  # Returns for each ticker
+
+# WRONG — do NOT use group_by="ticker" then access df["Close"]
+# That creates a different MultiIndex where Close is nested under each ticker
 
 # Company info and fundamentals
 ticker = yf.Ticker("RELIANCE.NS")

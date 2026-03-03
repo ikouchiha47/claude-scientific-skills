@@ -41,8 +41,9 @@ uv run ruff check .
 
 1. **Check memory first** — search for existing scripts, past approaches, known issues
 2. **Check existing code** — look in `scripts/`, skill `scripts/` dirs, and reference docs for reusable code before writing new
-3. **Verify dependencies** — after writing code, confirm all imports are installed (`uv pip install` if missing)
-4. **Lint** — run `uv run ruff check` on any new/modified Python files
+3. **Read the skill's references/** — skill scripts are examples, not production-ready templates. Before using a skill's code, read its `references/` docs for API details, edge cases, and correct usage patterns. If the example doesn't handle your case (e.g. multi-ticker downloads, pagination, error handling), write new code using the references as the source of truth — don't force the example to work
+4. **Verify dependencies** — after writing code, confirm all imports are installed (`uv pip install` if missing)
+5. **Lint** — run `uv run ruff check` on any new/modified Python files
 
 ### Other languages
 

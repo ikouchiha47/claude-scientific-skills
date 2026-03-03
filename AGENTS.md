@@ -41,19 +41,55 @@ uv run ruff check .
 
 1. **Check memory first** — search for existing scripts, past approaches, known issues
 2. **Check existing code** — look in `scripts/`, skill `scripts/` dirs, and reference docs for reusable code before writing new
-3. **Verify dependencies** — after writing code, confirm all imports are installed (`uv pip install` if missing)
-4. **Lint** — run `uv run ruff check` on any new/modified Python files
+3. **Read the skill's references/** — skill scripts are examples, not production-ready templates. Before using a skill's code, read its `references/` docs for API details, edge cases, and correct usage patterns. If the example doesn't handle your case (e.g. multi-ticker downloads, pagination, error handling), write new code using the references as the source of truth — don't force the example to work
+4. **Verify dependencies** — after writing code, confirm all imports are installed (`uv pip install` if missing)
+5. **Lint** — run `uv run ruff check` on any new/modified Python files
+
+### Writing Python files
+
+**NEVER use `echo` with `\n` to write Python files.** Use heredoc:
+
+```bash
+# CORRECT — heredoc preserves newlines
+cat <<'PYEOF' > scripts/my_script.py
+import pandas as pd
+
+def main():
+    print("hello")
+
+if __name__ == "__main__":
+    main()
+PYEOF
+
+# WRONG — writes literal \n characters, causes SyntaxError
+echo 'import pandas as pd\ndef main():' > scripts/my_script.py
+```
 
 ### Other languages
 
 Use language-specific sandboxing (nix, npm/npx, cargo, etc.) — do not install globally.
+
+## Script Locations
+
+| Location | Purpose | Example |
+|----------|---------|---------|
+| `scientific-skills/<skill>/scripts/` | Reusable scripts bundled with a skill | `chart-scout/scripts/chart_scout.py` |
+| `memory/scripts/` | Memory store CLI | `memory/scripts/memory_store.py` |
+| `scripts/` | Reusable project-level tools (linking, generic feature engineering) | `scripts/link_skills.sh`, `scripts/feature_engineer.py` |
+| `output/<analysis_name>/` | Ad-hoc analysis scripts + their outputs (data, charts, reports) | `output/mining_analysis/` |
+
+**When creating scripts during analysis:**
+- Put ad-hoc/one-off analysis scripts in `output/<analysis_name>/` alongside their output (CSV, PNG, reports)
+- Only promote a script to `scripts/` if it's reusable across multiple analyses
+- Never dump throwaway analysis scripts into root `scripts/` — it becomes a mess fast
+- Name scripts descriptively: `output/mining_analysis/feature_extraction.py`, not `scripts/mining_v2.py`
 
 ## Skills Structure
 
 Each skill lives under `scientific-skills/<skill-name>/` with:
 - `SKILL.md` — main documentation (frontmatter + usage)
 - `references/` — detailed reference docs
-- `scripts/` — executable Python scripts
+- `scripts/` — executable Python scripts (reusable, part of the skill)
 - `assets/` — config files (YAML, JSON)
 
 ## Memory (Persistent Knowledge Store)
