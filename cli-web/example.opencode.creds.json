@@ -1,0 +1,14 @@
+{
+  "openai": {
+    "env": "OPENAI_API_KEY",
+    "key": "sk-proj-..."
+  },
+  "anthropic": {
+    "env": "ANTHROPIC_API_KEY",
+    "key": "sk-ant-..."
+  },
+  "xai": {
+    "env": "XAI_API_KEY",
+    "key": "xai-..."
+  }
+}

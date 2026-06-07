@@ -1,0 +1,118 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" font-family="-apple-system, BlinkMacSystemFont, sans-serif">
+  <!-- Background -->
+  <rect width="1200" height="800" fill="#0d1117"/>
+
+  <!-- Sidebar -->
+  <rect x="0" y="0" width="260" height="800" fill="#161b22" stroke="#30363d" stroke-width="1"/>
+
+  <!-- Sidebar: New Chat button -->
+  <rect x="16" y="16" width="228" height="40" rx="8" fill="#21262d" stroke="#30363d" stroke-width="1"/>
+  <text x="130" y="41" fill="#e6edf3" font-size="13" text-anchor="middle" font-weight="600">+ New Chat</text>
+
+  <!-- Sidebar: Search -->
+  <rect x="16" y="68" width="228" height="32" rx="6" fill="#0d1117" stroke="#30363d" stroke-width="1"/>
+  <text x="32" y="88" fill="#8b949e" font-size="12">Search conversations...</text>
+
+  <!-- Sidebar: Session items -->
+  <rect x="12" y="116" width="236" height="48" rx="8" fill="#1f6feb22" stroke="#1f6feb" stroke-width="1"/>
+  <circle cx="28" cy="132" r="4" fill="#3fb950"/>
+  <text x="40" y="136" fill="#e6edf3" font-size="13" font-weight="600">Mining stocks analysis</text>
+  <text x="40" y="152" fill="#8b949e" font-size="11">bash · 2 min ago</text>
+
+  <rect x="12" y="172" width="236" height="48" rx="8" fill="transparent"/>
+  <circle cx="28" cy="188" r="4" fill="#3fb950"/>
+  <text x="40" y="192" fill="#e6edf3" font-size="13">RSI backtest NIFTY</text>
+  <text x="40" y="208" fill="#8b949e" font-size="11">opencode · 1 hr ago</text>
+
+  <rect x="12" y="228" width="236" height="48" rx="8" fill="transparent"/>
+  <circle cx="28" cy="244" r="4" fill="#d29922"/>
+  <text x="40" y="248" fill="#e6edf3" font-size="13">PE Engine analysis</text>
+  <text x="40" y="264" fill="#8b949e" font-size="11">claude · 3 hrs ago</text>
+
+  <rect x="12" y="284" width="236" height="48" rx="8" fill="transparent"/>
+  <circle cx="28" cy="300" r="4" fill="#f85149"/>
+  <text x="40" y="304" fill="#8b949e" font-size="13">Portfolio optimization</text>
+  <text x="40" y="320" fill="#8b949e" font-size="11">opencode · yesterday</text>
+
+  <!-- Sidebar: Bottom controls -->
+  <line x1="0" y1="700" x2="260" y2="700" stroke="#30363d" stroke-width="1"/>
+  <rect x="16" y="712" width="110" height="32" rx="6" fill="#0d1117" stroke="#30363d" stroke-width="1"/>
+  <text x="71" y="732" fill="#8b949e" font-size="11" text-anchor="middle">OpenCode</text>
+  <rect x="134" y="712" width="110" height="32" rx="6" fill="#0d1117" stroke="#30363d" stroke-width="1"/>
+  <text x="189" y="732" fill="#8b949e" font-size="11" text-anchor="middle">grok-4-1-fast</text>
+  <rect x="16" y="752" width="228" height="36" rx="8" fill="#1f6feb"/>
+  <text x="130" y="775" fill="#fff" font-size="13" text-anchor="middle" font-weight="600">New Session</text>
+
+  <!-- Main chat area -->
+  <!-- Header -->
+  <rect x="260" y="0" width="940" height="56" fill="#161b22" stroke="#30363d" stroke-width="1"/>
+  <text x="284" y="33" fill="#e6edf3" font-size="15" font-weight="600">Mining stocks analysis</text>
+  <text x="460" y="33" fill="#8b949e" font-size="12">bash · c2e83221</text>
+  <rect x="1040" y="14" width="56" height="28" rx="6" fill="#21262d" stroke="#30363d" stroke-width="1"/>
+  <text x="1068" y="33" fill="#8b949e" font-size="11" text-anchor="middle">Stop</text>
+  <rect x="1104" y="14" width="72" height="28" rx="6" fill="#21262d" stroke="#f8514933" stroke-width="1"/>
+  <text x="1140" y="33" fill="#f85149" font-size="11" text-anchor="middle">Remove</text>
+
+  <!-- Chat messages -->
+  <!-- User message 1 -->
+  <g transform="translate(260, 80)">
+    <!-- User bubble - right aligned -->
+    <rect x="480" y="0" width="420" height="52" rx="16" fill="#1f6feb"/>
+    <text x="500" y="30" fill="#fff" font-size="14">How do earthquakes affect mining stocks in India?</text>
+  </g>
+
+  <!-- Assistant message 1 -->
+  <g transform="translate(260, 152)">
+    <!-- Avatar -->
+    <circle cx="30" cy="20" r="16" fill="#30363d"/>
+    <text x="30" y="25" fill="#8b949e" font-size="12" text-anchor="middle">AI</text>
+    <!-- Bubble -->
+    <rect x="56" y="0" width="640" height="120" rx="16" fill="#21262d"/>
+    <text x="76" y="28" fill="#e6edf3" font-size="14">Earthquakes near mining regions like Jharkhand and Odisha can</text>
+    <text x="76" y="48" fill="#e6edf3" font-size="14">disrupt Coal India and NMDC operations, causing temporary</text>
+    <text x="76" y="68" fill="#e6edf3" font-size="14">stock drops of 2-5%. Key factors:</text>
+    <text x="76" y="96" fill="#8b949e" font-size="13">- Production halts at open-pit mines</text>
+    <text x="76" y="112" fill="#8b949e" font-size="13">- Supply chain disruption to steel plants</text>
+  </g>
+
+  <!-- User message 2 -->
+  <g transform="translate(260, 300)">
+    <rect x="380" y="0" width="520" height="52" rx="16" fill="#1f6feb"/>
+    <text x="400" y="30" fill="#fff" font-size="14">What about monsoon impact on agriculture stocks?</text>
+  </g>
+
+  <!-- Assistant message 2 (streaming) -->
+  <g transform="translate(260, 372)">
+    <circle cx="30" cy="20" r="16" fill="#30363d"/>
+    <text x="30" y="25" fill="#8b949e" font-size="12" text-anchor="middle">AI</text>
+    <rect x="56" y="0" width="640" height="140" rx="16" fill="#21262d"/>
+    <text x="76" y="28" fill="#e6edf3" font-size="14">Heavy monsoon seasons boost crop yields but excessive rain</text>
+    <text x="76" y="48" fill="#e6edf3" font-size="14">causes flooding. Agriculture stocks like UPL, PI Industries</text>
+    <text x="76" y="68" fill="#e6edf3" font-size="14">tend to rally during normal monsoon years.</text>
+    <text x="76" y="96" fill="#e6edf3" font-size="14" font-weight="600">Key stocks to watch:</text>
+    <text x="76" y="116" fill="#8b949e" font-size="13">| Stock | Sector | Monsoon Sensitivity |</text>
+    <text x="76" y="132" fill="#8b949e" font-size="13">| UPL | Agrochemicals | High |</text>
+    <!-- Streaming cursor -->
+    <rect x="76" y="138" width="8" height="2" fill="#58a6ff">
+      <animate attributeName="opacity" values="1;0;1" dur="1s" repeatCount="indefinite"/>
+    </rect>
+  </g>
+
+  <!-- Input area -->
+  <rect x="260" y="720" width="940" height="80" fill="#0d1117" stroke="#30363d" stroke-width="1"/>
+  <rect x="284" y="736" width="832" height="48" rx="24" fill="#161b22" stroke="#30363d" stroke-width="1"/>
+  <text x="312" y="765" fill="#8b949e" font-size="14">Send a message...</text>
+  <!-- Send button -->
+  <circle cx="1144" cy="760" r="22" fill="#1f6feb"/>
+  <polygon points="1137,760 1151,760 1144,748" fill="#fff"/>
+
+  <!-- Labels / annotations -->
+  <rect x="920" y="540" width="260" height="150" rx="12" fill="#161b2299" stroke="#30363d" stroke-width="1"/>
+  <text x="940" y="565" fill="#58a6ff" font-size="12" font-weight="600">Semantic Search Results</text>
+  <line x1="930" y1="575" x2="1170" y2="575" stroke="#30363d" stroke-width="1"/>
+  <text x="940" y="595" fill="#3fb950" font-size="11">87% monsoon impact agriculture</text>
+  <text x="940" y="613" fill="#3fb950" font-size="11">69% earthquakes mining stocks</text>
+  <text x="940" y="631" fill="#8b949e" font-size="11">53% Coal India NMDC operations</text>
+  <text x="940" y="649" fill="#8b949e" font-size="11">40% RSI strategy NIFTY</text>
+  <text x="940" y="673" fill="#58a6ff" font-size="10" text-decoration="underline">Powered by ChromaDB + Ollama BGE</text>
+</svg>
